@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
   before_action :set_user, :finish_signup
 
   def finish_signup
