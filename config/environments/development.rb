@@ -24,8 +24,8 @@ Rails.application.configure do
     enable_starttls_auto: true,
     user_name: Rails.application.secrets.gmail_user,
     password: Rails.application.secrets.gmail_password,
-    authentication => :plain,
-    domain => 'example.com'
+    authentication: :plain,
+    domain: 'example.com'
   }
 
   # Print deprecation notices to the Rails logger.
