@@ -7,17 +7,10 @@ class ApplicationController < ActionController::Base
     # Ensure we don't go into an infinite loop
     return if action_name == 'finish_signup'
 
-    # Redirect to the 'finish_signup' page if the user
-    # email hasn't been verified yet
+    # Redirect to the 'finish_signup' page if the user email hasn't
+    # yet been verified
     if current_user && !current_user.email_verified?
       redirect_to finish_signup_path(current_user)
     end
   end
-
-  private
-    def authenticate_user!
-      if !current_user
-        redirect_to root_url, alert: "You need to sign in to access this page."
-      end
-    end
 end

@@ -4,6 +4,9 @@ class CreateIdentities < ActiveRecord::Migration
       t.references :user, index: true
       t.string :provider
       t.string :uid
+      t.string :token
+      t.string :secret
+      t.string :username
 
       t.timestamps
     end
